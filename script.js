@@ -105,6 +105,15 @@ const appData = {
 
 // Event listener saat DOM siap
 document.addEventListener('DOMContentLoaded', function() {
+    if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(reg => console.log("Service Worker registered:", reg))
+      .catch(err => console.log("Service Worker failed:", err));
+  });
+}
+
     // Update saldo dan data di UI
     updateUI();
     
@@ -1570,4 +1579,5 @@ function showTransactionDetail(transaction) {
     modal.querySelector('#close-detail').addEventListener('click', function() {
         modal.remove();
     });
+    
 }
