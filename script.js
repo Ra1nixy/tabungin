@@ -113,6 +113,25 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(err => console.log("Service Worker failed:", err));
   });
 }
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // contoh bikin tombol install sendiri
+  const btnInstall = document.getElementById('btnInstall');
+  btnInstall.style.display = 'block';
+  btnInstall.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted A2HS');
+      } else {
+        console.log('User dismissed A2HS');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
 
     // Update saldo dan data di UI
     updateUI();
