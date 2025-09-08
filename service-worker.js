@@ -1,9 +1,9 @@
 const CACHE_NAME = "tabungin-cache-v1";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/script.js",
+  "/tabungin",
+  "/tabungin/index.html",
+  "/tabungin/manifest.json",
+  "/tabungin/script.js",
   "https://cdn.tailwindcss.com",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
   "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
