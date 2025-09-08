@@ -1,7 +1,8 @@
 {
   "name": "Tabungin - Aplikasi Menabung",
   "short_name": "Tabungin",
-  "start_url": "/index.html",
+"start_url": "/tabungin/index.html"
+,
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#00AA13",
